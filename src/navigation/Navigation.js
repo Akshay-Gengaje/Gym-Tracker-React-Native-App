@@ -23,6 +23,7 @@ function TabGroup() {
           // bottom: 15,
           // left: 10,
           // right: 10,
+          // right: 10,
           // borderRadius: 20,
 
           backgroundColor: "black",
