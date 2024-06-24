@@ -4,7 +4,8 @@ import { LineChart } from "react-native-chart-kit";
 
 const LineCharts = () => {
   return (
-    <View style={{ justifyContent: "center", alignItems: "center" }}>
+    <View>
+      <Text style={styles.title}>Body Weight Chart</Text>
       <LineChart
         data={{
           labels: ["January", "February", "March", "April", "May", "June"],
@@ -21,10 +22,10 @@ const LineCharts = () => {
             },
           ],
         }}
-        width={Dimensions.get("window").width} // from react-native
+        width={Dimensions.get("window").width}
         height={220}
         yAxisSuffix=" Kg"
-        yAxisInterval={1} // optional, defaults to 1
+        yAxisInterval={1}
         chartConfig={{
           propsForBackgroundLines: {
             strokeWidth: 0,
@@ -37,6 +38,8 @@ const LineCharts = () => {
         }}
         bezier
         style={{
+          justifyContent: "center",
+          alignItems: "center",
           marginVertical: 8,
           marginLeft: 28,
         }}
@@ -47,4 +50,13 @@ const LineCharts = () => {
 
 export default LineCharts;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  title: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#fff",
+    marginLeft: 10,
+    marginBottom: 10,
+    textAlign: "left",
+  },
+});

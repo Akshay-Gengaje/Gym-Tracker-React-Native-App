@@ -1,10 +1,13 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { tabScreens } from "./tabConfig";
+import { createStackNavigator } from "@react-navigation/stack";
 import { StatusBar, StyleSheet, View } from "react-native";
+import { tabScreens } from "./tabConfig";
+import AddActivity from "../forms/AddActivity/AddActivity";
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 function TabGroup() {
   return (
@@ -19,20 +22,7 @@ function TabGroup() {
         headerShown: false,
         tabBarStyle: {
           height: 60,
-          // position: "absolute",
-          // bottom: 15,
-          // left: 10,
-          // right: 10,
-          // right: 10,
-          // borderRadius: 20,
-
           backgroundColor: "black",
-          // borderColor: "#eff",
-          // borderWidth: 1,
-          // borderTopLeftRadius: 20,
-          // borderTopRightRadius: 20,
-          // borderBottomLeftRadius: 20,
-          // borderBottomRightRadius: 20,
         },
       })}
     >
@@ -55,7 +45,14 @@ export default function Navigation() {
   return (
     <NavigationContainer>
       <StatusBar barStyle={"light-content"} />
-      <TabGroup />
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Main"
+          component={TabGroup}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen name="AddActivity" component={AddActivity} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }

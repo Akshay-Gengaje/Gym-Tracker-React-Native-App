@@ -11,7 +11,7 @@ import {
 import { ExpandableCalendar, CalendarProvider } from "react-native-calendars";
 import moment from "moment";
 
-const Schedule = () => {
+const Schedule = ({ navigation }) => {
   const currentDay = moment();
   const [selectedDay, setSelectedDay] = useState(
     currentDay.format("YYYY-MM-DD")
@@ -100,6 +100,9 @@ const Schedule = () => {
               style={{
                 color: "red",
                 fontSize: 16,
+              }}
+              onPress={() =>{
+                navigation.navigate("AddActivity")
               }}
             >
               Add +

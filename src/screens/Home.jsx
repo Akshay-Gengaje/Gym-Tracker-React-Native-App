@@ -1,14 +1,19 @@
-import { StatusBar, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import LineCharts from "../components/LineChart/LineCharts";
-
+import Card from "../components/Card/Card";
+import { FontAwesome5 } from "@expo/vector-icons";
 const Home = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.heading}>Home Screen</Text>
-      <Text style={styles.subHeading}>Activity Tracking</Text>
-      <LineCharts/>
+      <Text style={styles.heading}>Health Overview</Text>
+      <Card
+        title={"Weight"}
+        data={50}
+        icon={<FontAwesome5 name="weight" size={24} color="white" />}
+      />
+      <LineCharts />
     </SafeAreaView>
   );
 };
